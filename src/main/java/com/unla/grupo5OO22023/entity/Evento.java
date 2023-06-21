@@ -1,6 +1,7 @@
 package com.unla.grupo5OO22023.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import jakarta.persistence.Column;
@@ -42,9 +43,9 @@ public class Evento {
     @JoinColumn(name="idDispositivo", nullable=true)
     private Dispositivo dispositivo;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@NotEmpty
 	@Column(name = "fechaHora")
-	private LocalDate fechaHora;
+	private LocalDateTime fechaHora;
 
 }

@@ -1,5 +1,5 @@
-create database grupo_5_bdd;
+create database grupo5bdd;
 
-use grupo_5_bdd; 
+use grupo5bdd; 
 
 

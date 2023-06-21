@@ -1,7 +1,5 @@
 package com.unla.grupo5OO22023.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,14 +26,16 @@ public class SensorProximidad extends Dispositivo{
 	@Column(name = "utilidad") //Si esta en TRUE, esta ocupado, y sino esta libre
 	private boolean utilidad;
 
-	@NotEmpty
-	@Column(name="activaDesde")
-	private LocalDateTime activaDesde;
-	
-	@NotEmpty
-	@Column(name="activaHasta")
-	private LocalDateTime activaHasta;
+	public SensorProximidad(boolean estado, @NotEmpty boolean utilidad) {
+		super(estado);
+		this.utilidad = utilidad;
+	}
 
+	@Override
+	public void actualizarEstado() {
+		
+	}
+	
 	
 	
 }

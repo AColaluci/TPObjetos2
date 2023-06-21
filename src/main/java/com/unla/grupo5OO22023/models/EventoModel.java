@@ -16,5 +16,4 @@ public class EventoModel {
 		this.dispositivo = dispositivo;
 		this.fechaHora = fechaHora;
 	}
-	
 }

@@ -17,4 +17,5 @@ public class DispositivoModel {
 		this.estado = estado;
 		this.nombre = nombre;
 	}
+	
 }

@@ -20,7 +20,7 @@ public class DispositivoService implements IDispositivoService{
 
     @Override
 	public Dispositivo findByid(int id) {
-		return dispositivoRepository.findById(id);
+		return dispositivoRepository.findByIdDispositivo(id);
 	}
     
     @Override
