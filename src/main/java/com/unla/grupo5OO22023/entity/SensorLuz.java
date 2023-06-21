@@ -38,9 +38,7 @@ public class SensorLuz extends Dispositivo {
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime activaHasta;
 
-	public SensorLuz(boolean estado) {
-		super(estado);
-	}
+
 	
 	@OneToOne(mappedBy="sensorLuz")
 	private AlumbradoInteligente alumbradoInteligente;
@@ -50,4 +48,29 @@ public class SensorLuz extends Dispositivo {
 		// TODO Auto-generated method stub
 
 	}
+
+	public LocalDateTime getActivaDesde() {
+		return activaDesde;
+	}
+
+	public void setActivaDesde(LocalDateTime activaDesde) {
+		this.activaDesde = activaDesde;
+	}
+
+	public LocalDateTime getActivaHasta() {
+		return activaHasta;
+	}
+
+	public void setActivaHasta(LocalDateTime activaHasta) {
+		this.activaHasta = activaHasta;
+	}
+
+	public AlumbradoInteligente getAlumbradoInteligente() {
+		return alumbradoInteligente;
+	}
+
+	public void setAlumbradoInteligente(AlumbradoInteligente alumbradoInteligente) {
+		this.alumbradoInteligente = alumbradoInteligente;
+	}
+	
 }

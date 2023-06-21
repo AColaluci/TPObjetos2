@@ -40,12 +40,6 @@ public abstract class Dispositivo{
 	@NotEmpty
 	@Column(name = "estado")
 	protected boolean estado; 
-	
-	//CONSTRUCTOR
-	public Dispositivo(boolean estado) {
-		super();
-		this.estado = estado;
-	}
 
 	//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOS
 	public abstract void actualizarEstado();

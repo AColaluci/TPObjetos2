@@ -26,10 +26,6 @@ public class SensorProximidad extends Dispositivo{
 	@Column(name = "utilidad") //Si esta en TRUE, esta ocupado, y sino esta libre
 	private boolean utilidad;
 
-	public SensorProximidad(boolean estado, @NotEmpty boolean utilidad) {
-		super(estado);
-		this.utilidad = utilidad;
-	}
 
 	@Override
 	public void actualizarEstado() {
