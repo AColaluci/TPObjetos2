@@ -1,4 +1,4 @@
-package com.unla.grupo5OO22023.models.entity;
+package com.unla.grupo5OO22023.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +18,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Table(name ="dispositivo") 
-public abstract class Dispositivo{
+public class Dispositivo{
 	
 	//ATRIBUTO
 	@Id  
@@ -31,12 +31,6 @@ public abstract class Dispositivo{
 	@Column(name = "estado")
 	protected boolean estado; 
 	
-	//CONSTRUCTOR
-	public Dispositivo(boolean estado) {
-		super();
-		this.estado = estado;
-	}
-
-	//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOS
-	public abstract void actualizarEstado();
+	//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOSITIVOS
+	//public abstract void actualizarEstado();
 }
