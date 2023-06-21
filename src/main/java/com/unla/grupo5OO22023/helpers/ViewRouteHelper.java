@@ -15,5 +15,9 @@ public class ViewRouteHelper {
 	public final static String DispositivoIndex = "dispositivo/dispositivos";
 	public final static String DispositivoRuta = "/dispositivo/"; //Dispositivo
 	
+	// Para el DISPOSITIVO //panamiguel
+		public final static String FORM_SENSORLUZ = "dispositivo/formularioSensorLuz";
+		public final static String NEW_SENSORLUZ="dispositivo/nuevoSensorLuz";
+	
 	
 }
