@@ -15,7 +15,6 @@ public class DispositivoService implements IDispositivoService{
     @Autowired
     @Qualifier("dispositivoRepository")
     private IDispositivoRepository dispositivoRepository;
-
     private ModelMapper modelMapper = new ModelMapper();
 
     @Override
