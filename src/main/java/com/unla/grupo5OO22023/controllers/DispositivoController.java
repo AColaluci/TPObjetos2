@@ -21,16 +21,15 @@ public class DispositivoController {
 	private IDispositivoService dispositivoService;
 
 
-    @GetMapping("/")
+    @GetMapping("/editar")
     public String index(Model model){
        model.addAttribute("dispositivos", dispositivoService.getAll());
        return "dispositivo/dispositivos";
     }
 
-    @PostMapping("/")
+    @PostMapping("/editar")
     public RedirectView create(@ModelAttribute("dispositivo") DispositivoModel dispositivoModel){
         dispositivoService.insertOrUpdate(dispositivoModel);
         return new RedirectView(ViewRouteHelper.DispositivoRuta);
     }
-
 }

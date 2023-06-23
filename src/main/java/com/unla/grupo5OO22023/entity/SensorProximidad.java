@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
@@ -17,7 +18,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Table(name ="evento")
+@PrimaryKeyJoinColumn(name = "idDispositivo")
+@Table(name="sensorProximidad")
 
 public class SensorProximidad extends Dispositivo{
 	//ATRIBUTOS

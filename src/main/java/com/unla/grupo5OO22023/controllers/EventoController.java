@@ -22,7 +22,7 @@ public class EventoController {
     @Qualifier("eventoService")
     private IEventoService eventoService;
 	
-	@GetMapping("/")
+	@GetMapping("/editar")
     public ModelAndView index(){
         ModelAndView mAV = new ModelAndView(ViewRouteHelper.EventoIndex);
         mAV.addObject("eventos",eventoService.getAll());
@@ -30,7 +30,7 @@ public class EventoController {
         return mAV;
     }
 	
-	 @PostMapping("/")
+	 @PostMapping("/editar")
 	    public RedirectView create(@ModelAttribute("evento") EventoModel eventoModel){
 	        eventoService.insertOrUpdate(eventoModel);
 	        return new RedirectView(ViewRouteHelper.EventoRuta);

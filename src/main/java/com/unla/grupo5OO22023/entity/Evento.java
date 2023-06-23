@@ -39,8 +39,7 @@ public class Evento {
 	@Column(name = "descripcion")
 	private String descripcion;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="idDispositivo", nullable=true)
+	@ManyToOne
     private Dispositivo dispositivo;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")

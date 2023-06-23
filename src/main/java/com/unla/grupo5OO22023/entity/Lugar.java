@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
@@ -28,13 +28,13 @@ public class Lugar {
 	@Column(name = "idLugar")
 	private int idLugar;
 
-	@ManyToOne
-	@JoinColumn(name = "idDispositivo")
-	private SensorLuz sensorLuz;
+	@OneToOne
+	@JoinColumn(name = "idSensorProximidad")
+	private SensorProximidad sensorProximidad;
 
-	public Lugar(@NotEmpty int idLugar, SensorLuz sensorLuz) {
+	public Lugar(@NotEmpty int idLugar, SensorProximidad sensorProximidad) {
 		super();
 		this.idLugar = idLugar;
-		this.sensorLuz = sensorLuz;
+		this.sensorProximidad = sensorProximidad;
 	}
 }

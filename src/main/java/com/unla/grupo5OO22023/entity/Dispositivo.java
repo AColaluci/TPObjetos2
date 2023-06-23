@@ -1,13 +1,14 @@
 package com.unla.grupo5OO22023.entity;
 
-import javax.persistence.Inheritance;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+//import javax.persistence.Inheritance;
+//import javax.persistence.InheritanceType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;

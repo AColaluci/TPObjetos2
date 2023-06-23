@@ -1,8 +1,6 @@
 <form action = "#" th:action="@{newsensorluz}" th:object="${sensorluz}" method="post">
-<p> NOMBRE: <input type="string" th:field="*{nombre}"/>
-<p> ACTIVA DESDE: <input type="datetime-local" th:field="*{activaDesde}"/></p>
-<p> ACTIVA HASTA: <input type="datetime-local" th:field="*{activaHasta}"/></p>
-
-<input type="submit"/>
-
+	<p> NOMBRE: <input type="string" th:field="*{nombre}"/>
+	<p> ACTIVA DESDE: <input type="datetime-local" th:field="*{activaDesde}"/></p>
+	<p> ACTIVA HASTA: <input type="datetime-local" th:field="*{activaHasta}"/></p>
+	<input type="submit"/>
 </form>
