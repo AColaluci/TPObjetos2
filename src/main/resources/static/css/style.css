@@ -1,0 +1,16 @@
+#contenedor {
+	width: 100%;
+	max-width: 600px;
+	/* Puedes ajustar el ancho máximo según tus necesidades */
+	margin: 0 auto;
+	/* Centra el contenedor horizontalmente */
+	background-color: #f2f2f2;
+	/* Color de fondo del contenedor */
+	padding: 20px;
+	/* Espacio interno del contenedor */
+}
+
+#UnlaFotoHome {
+	max-width: 100%;
+	height: auto;
+}
