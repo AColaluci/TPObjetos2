@@ -6,7 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository("eventoRepository")
-public interface IEventoRepository extends JpaRepository<Evento, Serializable>{
-	    public abstract Evento findByDescripcion(String descripcion);
-	    public abstract Evento findByidEvento(int idEvento);
+public interface IEventoRepository extends JpaRepository<Evento, Serializable> {
+	public abstract Evento findByDescripcion(String descripcion);
+
+	public abstract Evento findByidEvento(int idEvento);
 }
