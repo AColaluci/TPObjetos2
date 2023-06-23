@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+
 <head th:fragment="head">
-<meta charset="UTF-8">
-<title>Inicio</title>
-<link rel="stylesheet"
-	th:href="@{/css/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.min.css}">
+	<meta charset="UTF-8">
+	<title>Inicio</title>
+	<link rel="stylesheet" th:href="@{/css/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.min.css}">
 </head>
+
 <body>
 
 	<!-- BARRA DE NAVEGACION -->
 	<header th:fragment="header">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
-				<a class="navbar-brand" href="#"> 
-				<strong>Unla</strong>
+				<a class="navbar-brand" th:href="@{/home}">
+					<strong >Unla</strong>
 				</a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<!--  ENLACES DEL MENU  -->
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" th:href="@{/home}">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="#{/formSensorLuz}">Dispositivos</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">Logs</a></li>
+						<button type="button" class="btn btn-outline-light btn-sl" href="#">Dispositivos</button> <!-- Visualizas TODOS los sensores-->
+<!--						<button type="button" class="btn btn-outline-success">BotonPana</button>--> <!-- Boton FACHERITO aceptar -->
+<!--						<button type="button" class="btn btn-outline-danger">BotonPana2</button>--> <!-- Boton FACHERITO rechazar -->
+						<li class="nav-item"><a class="nav-link" href="#{/formSensorLuz}">Sensor luz</a></li>	<!--  Agregas los de luz-->
+						<li class="nav-item"><a class="nav-link" href="#">Sensor Proximidad</a></li> 			<!--  Agregas los de proximidad-->
+						<!--<button type="button" class="btn btn-outline-light btn-lg">Download</button>-->
+
 					</ul>
 				</div>
 			</div>
@@ -52,4 +56,5 @@
 	</footer>
 
 </body>
+
 </html>
