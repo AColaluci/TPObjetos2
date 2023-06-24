@@ -29,53 +29,52 @@ public class DispositivoController {
 	@Autowired
 	@Qualifier("sensorluzService")
 	private ISensorLuzService sensorluzService;
-	
+
 	@Autowired
 	@Qualifier("sensorProximidadService")
 	private ISensorProximidadService sensorProximidadService;
-	
-    @GetMapping("/listar")
-    public String index(Model model){
-       model.addAttribute("dispositivos", dispositivoService.getAll());
-       return ViewRouteHelper.DispositivoIndex;
-    }
 
-    @PostMapping("/editar")
-    public RedirectView create(@ModelAttribute("dispositivo") DispositivoModel dispositivoModel){
-        dispositivoService.insertOrUpdate(dispositivoModel);
-        return new RedirectView(ViewRouteHelper.DispositivoRuta);
-    }
-    
-    // ************************SENSORLUZ***********************************************************
-    
-    @GetMapping("/newsluz")
-    public String agregar(Model model) {
-    	SensorLuz sensorluz = new SensorLuz();
-    	model.addAttribute("sensorluz",sensorluz);
-    	return ViewRouteHelper.FORM_SENSORLUZ;
-    }
-    
-    @PostMapping("/savesluz")
-    public String save(Dispositivo dispositivo, Model model) {
-    	sensorluzService.save((SensorLuz)(dispositivo));
-    	return "redirect:/listar";
-    }
-    
-    // ************************SENSORPROXIMIDAD***********************************************************
-    
-    @GetMapping("/newsproxi")
-    public String agregarProximidad(Model model) {
-    	SensorProximidad sensorProximidad = new SensorProximidad();
+	@GetMapping("/listar")
+	public String index(Model model) {
+		model.addAttribute("dispositivos", dispositivoService.getAll());
+		return ViewRouteHelper.DispositivoIndex;
+	}
+
+	@PostMapping("/editar")
+	public RedirectView create(@ModelAttribute("dispositivo") DispositivoModel dispositivoModel) {
+		dispositivoService.insertOrUpdate(dispositivoModel);
+		return new RedirectView(ViewRouteHelper.DispositivoRuta);
+	}
+
+	// ************************SENSORLUZ***********************************************************
+
+	@GetMapping("/newsluz")
+	public String agregar(Model model) {
+		SensorLuz sensorluz = new SensorLuz();
+		model.addAttribute("sensorluz", sensorluz);
+		return ViewRouteHelper.FORM_SENSORLUZ;
+	}
+
+	@PostMapping("/savesluz")
+	public String save(Dispositivo dispositivo, Model model) {
+		sensorluzService.save((SensorLuz) (dispositivo));
+		return "redirect:/listar";
+	}
+
+	// ************************SENSORPROXIMIDAD***********************************************************
+
+	@GetMapping("/newsproxi")
+	public String agregarProximidad(Model model) {
+		SensorProximidad sensorProximidad = new SensorProximidad();
 //    	model.addAttribute("sensorProximidad",sensorProximidad);
-    	model.addAttribute("sensorProximidad", sensorProximidad);
-    	return ViewRouteHelper.FORM_SENSORPROXIMIDAD;
-    }
-    
-    @PostMapping("/savesproxi")
-    public String saveProximidad(Dispositivo dispositivo, Model model) {
-    	sensorProximidadService.save((SensorProximidad)(dispositivo));
-    	return "redirect:/listar";
-    }
-    
-    
+		model.addAttribute("sensorProximidad", sensorProximidad);
+		return ViewRouteHelper.FORM_SENSORPROXIMIDAD;
+	}
+
+	@PostMapping("/savesproxi")
+	public String saveProximidad(Dispositivo dispositivo, Model model) {
+		sensorProximidadService.save((SensorProximidad) (dispositivo));
+		return "redirect:/listar";
+	}
+
 }

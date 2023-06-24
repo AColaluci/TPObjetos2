@@ -6,10 +6,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +26,18 @@ import lombok.ToString;
 @Table(name="sensorLuz")
 public class SensorLuz extends Dispositivo {
 
+	
+	
+	public SensorLuz(@NotEmpty LocalDateTime activaDesde, @NotEmpty LocalDateTime activaHasta) {
+		super();
+		this.activaDesde = activaDesde;
+		this.activaHasta = activaHasta;
+	}
+	
+	public SensorLuz() {
+		super();
+	}
+
 	@NotEmpty
 	@Column(name = "activaDesde")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -36,14 +48,8 @@ public class SensorLuz extends Dispositivo {
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime activaHasta;
 
-	
-	@OneToOne(mappedBy="sensorLuz")
-	private AlumbradoInteligente alumbradoInteligente;
-
 	@Override
 	public void actualizarEstado() {
-		// TODO Auto-generated method stub
-
 	}
 
 	public LocalDateTime getActivaDesde() {
@@ -61,13 +67,4 @@ public class SensorLuz extends Dispositivo {
 	public void setActivaHasta(LocalDateTime activaHasta) {
 		this.activaHasta = activaHasta;
 	}
-
-	public AlumbradoInteligente getAlumbradoInteligente() {
-		return alumbradoInteligente;
-	}
-
-	public void setAlumbradoInteligente(AlumbradoInteligente alumbradoInteligente) {
-		this.alumbradoInteligente = alumbradoInteligente;
-	}
-	
 }

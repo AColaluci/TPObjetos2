@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -67,7 +68,16 @@ public class SensorProximidad extends Dispositivo{
 	public void setSalida(LocalDateTime salida) {
 		this.salida = salida;
 	}
-	
-	
-	
+
+	public SensorProximidad(@NotEmpty boolean utilidad, @NotEmpty LocalDateTime llegada,
+			@NotEmpty LocalDateTime salida) {
+		super();
+		this.utilidad = utilidad;
+		this.llegada = llegada;
+		this.salida = salida;
+	}
+
+	public SensorProximidad() {
+		super();
+	}
 }

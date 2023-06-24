@@ -29,13 +29,13 @@
 							<label>ACTIVA HASTA</label> <input th:field="*{activaHasta}"
 								type="datetime-local" class="form-control" />
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label>Alumbrado Inteligente</label> <select
 								th:field="*{alumbradoInteligente}" class="form-control">
 								<option th:each="alumbrado : ${alumbrados}"
 									th:value="${alumbrado}" th:text="${alumbrado.nombre}"></option>
 							</select>
-						</div>
+						</div> -->
 
 						<div class="card-footer">
 							<input type="submit" value="Guardar" class="btn btn-success">

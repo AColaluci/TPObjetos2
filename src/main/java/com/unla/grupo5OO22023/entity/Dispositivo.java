@@ -11,6 +11,7 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +31,7 @@ public abstract class Dispositivo{
 	//ATRIBUTO
 	@Id  
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@NotEmpty
+	@NotNull
 	@Column(name = "idDispositivo")   
 	protected int idDispositivo; 
 	
@@ -44,4 +45,42 @@ public abstract class Dispositivo{
 
 	//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOS
 	public abstract void actualizarEstado();
+
+	public Dispositivo() {
+		super();
+	}
+
+	public Dispositivo(@NotNull int idDispositivo, @NotEmpty String nombre, @NotEmpty boolean estado) {
+		super();
+		this.idDispositivo = idDispositivo;
+		this.nombre = nombre;
+		this.estado = estado;
+	}
+
+	public int getIdDispositivo() {
+		return idDispositivo;
+	}
+
+	public void setIdDispositivo(int idDispositivo) {
+		this.idDispositivo = idDispositivo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	
+	
+	
 }

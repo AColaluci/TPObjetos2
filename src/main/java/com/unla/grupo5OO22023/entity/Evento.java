@@ -15,6 +15,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,7 +32,7 @@ public class Evento {
 	//ATRIBUTOS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@NotEmpty
+	@NotNull
 	@Column(name = "idEvento")
 	private int idEvento;
 	
@@ -47,4 +48,51 @@ public class Evento {
 	@Column(name = "fechaHora")
 	private LocalDateTime fechaHora;
 
+	public Evento(@NotNull int idEvento, @NotEmpty String descripcion, Dispositivo dispositivo,
+			@NotEmpty LocalDateTime fechaHora) {
+		super();
+		this.idEvento = idEvento;
+		this.descripcion = descripcion;
+		this.dispositivo = dispositivo;
+		this.fechaHora = fechaHora;
+	}
+	
+	public Evento() {
+		super();
+	}
+
+	public int getIdEvento() {
+		return idEvento;
+	}
+
+	public void setIdEvento(int idEvento) {
+		this.idEvento = idEvento;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Dispositivo getDispositivo() {
+		return dispositivo;
+	}
+
+	public void setDispositivo(Dispositivo dispositivo) {
+		this.dispositivo = dispositivo;
+	}
+
+	public LocalDateTime getFechaHora() {
+		return fechaHora;
+	}
+
+	public void setFechaHora(LocalDateTime fechaHora) {
+		this.fechaHora = fechaHora;
+	}
+
+	
+	
 }

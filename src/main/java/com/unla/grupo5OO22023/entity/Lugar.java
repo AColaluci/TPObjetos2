@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,17 +24,40 @@ public class Lugar {
 	// ATRIBUTOS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@NotEmpty
+	@NotNull
 	@Column(name = "idLugar")
 	private int idLugar;
 
 	@OneToOne
+	@NotNull
 	@JoinColumn(name = "idSensorProximidad")
 	private SensorProximidad sensorProximidad;
 
-	public Lugar(@NotEmpty int idLugar, SensorProximidad sensorProximidad) {
+	public Lugar(@NotNull int idLugar, @NotNull SensorProximidad sensorProximidad) {
 		super();
 		this.idLugar = idLugar;
 		this.sensorProximidad = sensorProximidad;
 	}
+
+	public Lugar() {
+		super();
+	}
+
+	public int getIdLugar() {
+		return idLugar;
+	}
+
+	public void setIdLugar(int idLugar) {
+		this.idLugar = idLugar;
+	}
+
+	public SensorProximidad getSensorProximidad() {
+		return sensorProximidad;
+	}
+
+	public void setSensorProximidad(SensorProximidad sensorProximidad) {
+		this.sensorProximidad = sensorProximidad;
+	}
+
+	
 }
