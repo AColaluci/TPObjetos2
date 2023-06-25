@@ -11,11 +11,11 @@ import com.unla.grupo5OO22023.repositories.ISensorProximidadRepository;
 import com.unla.grupo5OO22023.services.ISensorProximidadService;
 
 @Service("sensorProximidadService")
-public class SensorProximidadService implements ISensorProximidadService{
+public class SensorProximidadService implements ISensorProximidadService {
 	@Autowired
 	@Qualifier("sensorProximidadRepository")
 	private ISensorProximidadRepository sensorProximidadRepository;
-	
+
 	@Override
 	public List<SensorProximidad> getAll() {
 		return (List<SensorProximidad>) sensorProximidadRepository.findAll();
@@ -25,7 +25,7 @@ public class SensorProximidadService implements ISensorProximidadService{
 	public SensorProximidad buscar(int id) {
 		return sensorProximidadRepository.findById(id).orElse(null);
 	}
-	
+
 	@Override
 	public void save(SensorProximidad sensorProximidad) {
 		sensorProximidadRepository.save(sensorProximidad);
@@ -35,6 +35,5 @@ public class SensorProximidadService implements ISensorProximidadService{
 	public void eliminar(int id) {
 		sensorProximidadRepository.deleteById(id);
 	}
-
 
 }

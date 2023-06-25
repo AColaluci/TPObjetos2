@@ -22,7 +22,7 @@ public class LogAuditoriaController {
 
 	private ILogAuditoriaService logService;
 	
-	@GetMapping("/editar")
+	//@GetMapping("/editar")
     public ModelAndView index(){
         ModelAndView mAV = new ModelAndView(ViewRouteHelper.LogAuditoriaIndex);
         mAV.addObject("logAuditorias",logService.getAll());
@@ -30,7 +30,7 @@ public class LogAuditoriaController {
         return mAV;
     }
 	
-	 @PostMapping("/editar")
+	// @PostMapping("/editar")
 	    public RedirectView create(@ModelAttribute("logAuditoria") LogAuditoriaModel logAuditoriaModel){
 		 	logService.insertOrUpdate(logAuditoriaModel);
 	        return new RedirectView(ViewRouteHelper.LogAuditoriaRuta);

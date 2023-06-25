@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<div class="container mt-4">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>DESCRIPCION</th>
+					<th>Fecha Hora</th>
+					<th>ID Dispositivo</th>
+				</tr>
+			<tbody>
+				<tr th:each="evento:${eventos}">
+					<td th:text="${evento.idEvento}"></td>
+					<td th:text="${evento.descripcion}"></td>
+					<td th:text="${evento.fechaHora}"></td>
+					<td th:text="${evento.Dispositivo}"></td>
+					<td>
+					 <a th:href="@{/evento/editar/}+${evento.idEvento}"class="btn btn-warning">Editar</a>
+					 <a	class="btn btn-danger">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>

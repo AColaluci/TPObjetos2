@@ -12,11 +12,11 @@ import com.unla.grupo5OO22023.services.ISensorLuzService;
 
 @Service("sensorluzService")
 public class SensorLuzService implements ISensorLuzService {
-	
+
 	@Autowired
 	@Qualifier("sensorluzRepository")
 	private ISensorLuzRepository sensorluzRepository;
-	
+
 	@Override
 	public List<SensorLuz> getAll() {
 		return (List<SensorLuz>) sensorluzRepository.findAll();
@@ -26,7 +26,7 @@ public class SensorLuzService implements ISensorLuzService {
 	public SensorLuz buscar(int id) {
 		return sensorluzRepository.findById(id).orElse(null);
 	}
-	
+
 	@Override
 	public void save(SensorLuz sensorLuz) {
 		sensorluzRepository.save(sensorLuz);
@@ -36,6 +36,5 @@ public class SensorLuzService implements ISensorLuzService {
 	public void eliminar(int id) {
 		sensorluzRepository.deleteById(id);
 	}
-
 
 }

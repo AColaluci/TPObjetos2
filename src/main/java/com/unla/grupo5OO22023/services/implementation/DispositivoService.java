@@ -24,7 +24,7 @@ public class DispositivoService implements IDispositivoService{
     
     @Override
     public List<Dispositivo> getAll() {
-        return dispositivoRepository.findAll();
+        return (List<Dispositivo>)dispositivoRepository.findAll();
     }
 
     @Override
@@ -32,6 +32,7 @@ public class DispositivoService implements IDispositivoService{
         Dispositivo dispositivo = dispositivoRepository.save(modelMapper.map(dispositivoModel, Dispositivo.class));
         return modelMapper.map(dispositivo, DispositivoModel.class);
     }
+
 
     @Override
     public boolean remove(int id) {

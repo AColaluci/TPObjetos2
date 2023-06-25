@@ -26,7 +26,7 @@ public class EventoService implements IEventoService {
     
     @Override
     public List<Evento> getAll() {
-        return eventoRepository.findAll();
+        return (List<Evento>)eventoRepository.findAll();
     }
 
     @Override

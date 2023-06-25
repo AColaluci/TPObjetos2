@@ -1,7 +1,5 @@
 package com.unla.grupo5OO22023.entity;
 
-//import javax.persistence.Inheritance;
-//import javax.persistence.InheritanceType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,23 +37,12 @@ public abstract class Dispositivo{
 	@Column(name="nombre")
 	protected String nombre;
 	
-	@NotEmpty
+	@NotNull
 	@Column(name = "estado")
 	protected boolean estado; 
 
 	//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOS
 	public abstract void actualizarEstado();
-
-	public Dispositivo() {
-		super();
-	}
-
-	public Dispositivo(@NotNull int idDispositivo, @NotEmpty String nombre, @NotEmpty boolean estado) {
-		super();
-		this.idDispositivo = idDispositivo;
-		this.nombre = nombre;
-		this.estado = estado;
-	}
 
 	public int getIdDispositivo() {
 		return idDispositivo;

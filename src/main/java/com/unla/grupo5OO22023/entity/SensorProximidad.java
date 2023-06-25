@@ -8,7 +8,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,28 +20,28 @@ import lombok.ToString;
 @Setter
 @ToString
 @PrimaryKeyJoinColumn(name = "idDispositivo")
-@Table(name="sensorProximidad")
+@Table(name = "sensorProximidad")
 
-public class SensorProximidad extends Dispositivo{
-	//ATRIBUTOS
-	
-	@NotEmpty
-	@Column(name = "utilidad") //Si esta en TRUE, esta ocupado, y sino esta libre
+public class SensorProximidad extends Dispositivo {
+	// ATRIBUTOS
+
+	@NotNull
+	@Column(name = "utilidad") // Si esta en TRUE, esta ocupado, y sino esta libre
 	private boolean utilidad;
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "llegada")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime llegada;
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "salida")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime salida;
-	
+
 	@Override
 	public void actualizarEstado() {
-		
+
 	}
 
 	public boolean isUtilidad() {
@@ -69,15 +68,10 @@ public class SensorProximidad extends Dispositivo{
 		this.salida = salida;
 	}
 
-	public SensorProximidad(@NotEmpty boolean utilidad, @NotEmpty LocalDateTime llegada,
-			@NotEmpty LocalDateTime salida) {
-		super();
-		this.utilidad = utilidad;
-		this.llegada = llegada;
-		this.salida = salida;
+	@Override
+	public String toString() {
+		return super.idDispositivo +" - SensorProximidad" ;
 	}
 
-	public SensorProximidad() {
-		super();
-	}
+	
 }

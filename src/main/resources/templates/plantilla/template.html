@@ -24,9 +24,9 @@
 				<!--  ENLACES DEL MENU  -->
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Logs</a></li>
-						<button type="button" class="btn btn-outline-light btn-sl" href="#">Dispositivos</button> <!-- Visualizas TODOS los sensores-->
+						<li class="nav-item"><a class="nav-link" th:href="@{/evento/listar}">Logs</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/evento/newevento}">Eventos</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/dispositivo/listar}">Dispositivos</a></li> <!-- Visualizas TODOS los sensores-->
 <!--						<button type="button" class="btn btn-outline-success">BotonPana</button>--> <!-- Boton FACHERITO aceptar -->
 <!--						<button type="button" class="btn btn-outline-danger">BotonPana2</button>--> <!-- Boton FACHERITO rechazar -->
 						<li class="nav-item"><a class="nav-link" th:href="@{/dispositivo/newsluz}">Sensor luz</a></li>	<!--  Agregas los de luz-->
