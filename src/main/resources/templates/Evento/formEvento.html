@@ -15,6 +15,8 @@
 					</div>
 					<div class="card-body">
 						<div class="form-group">
+							<div class="form-group">
+							<input type="hidden" th:field="*{idEvento}" />
 							<label>Descripcion</label> <input th:field="*{descripcion}" type="text"
 								class="form-control" />
 						</div>
@@ -26,7 +28,7 @@
 							<label>dispositivo ID</label> <input th:field="*{dispositivo}" type="number"
 								class="form-control" />
 						</div>
-						</div>
+					</div>
 						<div class="card-footer">
 							<input type="submit" value="Agregar" class="btn btn-success">
 						</div>
