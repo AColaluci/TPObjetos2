@@ -41,7 +41,7 @@ public class Evento {
     private Dispositivo dispositivo;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@NotEmpty
+	@NotNull
 	@Column(name = "fechaHora")
 	private LocalDateTime fechaHora;
 

@@ -36,7 +36,6 @@ public class DispositivoController {
 
 	@GetMapping("/listar")
 	public String listarDispositivos(Model model) {
-		// List<Dispositivo> dispositivos = dispositivoService.getAll();
 		List<SensorLuz> sensoresLuz = sensorluzService.getAll();
 		List<SensorProximidad> sensoresProximidad = sensorProximidadService.getAll();
 		model.addAttribute("titulo", "Lista de dispositivos");

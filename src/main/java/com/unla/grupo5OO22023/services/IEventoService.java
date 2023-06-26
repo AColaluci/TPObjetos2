@@ -9,6 +9,7 @@ public interface IEventoService {
 	Evento findById(int id);
 	public List<Evento> getAll();
 	public boolean remove(int idEvento);
-    public EventoModel insertOrUpdate(EventoModel eventoModel);
+    public EventoModel insertOrUpdate(EventoModel eventoModel);	
+	public void save(Evento evento);
   
 }

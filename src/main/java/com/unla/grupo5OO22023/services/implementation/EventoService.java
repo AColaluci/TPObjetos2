@@ -1,6 +1,7 @@
 package com.unla.grupo5OO22023.services.implementation;
 
 import com.unla.grupo5OO22023.entity.Evento;
+import com.unla.grupo5OO22023.entity.SensorLuz;
 import com.unla.grupo5OO22023.models.EventoModel;
 import com.unla.grupo5OO22023.services.IEventoService;
 import com.unla.grupo5OO22023.repositories.IEventoRepository;
@@ -35,6 +36,11 @@ public class EventoService implements IEventoService {
         return modelMapper.map(evento, EventoModel.class);
     }
 
+	@Override
+	public void save(Evento evento) {
+		eventoRepository.save(evento);
+	}
+    
     @Override
     public boolean remove(int id) {
         try{
