@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IEventoService {
 
-	Evento findById(int id);
+	public Evento findById(int id);
 	public List<Evento> getAll();
 	public boolean remove(int idEvento);
     public EventoModel insertOrUpdate(EventoModel eventoModel);	
