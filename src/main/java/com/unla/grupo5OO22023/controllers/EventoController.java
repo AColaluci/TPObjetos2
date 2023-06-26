@@ -44,6 +44,15 @@ public class EventoController {
 		return ViewRouteHelper.ERROR_EDITAR;
 	}
 	
+	@GetMapping("/eliminar/{idEvento}")
+	public String delete(Model model , @PathVariable int idEvento) {
+		Evento evento = eventoService.findById(idEvento);
+		if(evento!=null) {
+			eventoService.remove(idEvento);
+		}
+		return "redirect:/evento/listar";
+	}
+	
 	@GetMapping("/newevento")
 	public String agregar(Model model) {
 		Evento evento = new Evento();

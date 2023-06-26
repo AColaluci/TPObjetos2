@@ -21,7 +21,7 @@
 					<td th:text="${evento.Dispositivo}"></td>
 					<td>
 					 <a th:href="@{/evento/editar/}+${evento.idEvento}"class="btn btn-warning">Editar</a>
-					 <a	class="btn btn-danger">Eliminar</a>
+					 <a	th:href="@{/evento/eliminar/}+${evento.idEvento}" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>
 			</tbody>
