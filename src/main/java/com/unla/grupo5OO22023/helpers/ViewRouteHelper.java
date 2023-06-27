@@ -18,8 +18,11 @@ public class ViewRouteHelper {
 	public final static String DISPOSITIVO_RUTA = "/dispositivo/"; //Dispositivo
 	
 	// Para el DISPOSITIVO
-		public final static String FORM_SENSORLUZ = "dispositivo/formSensorLuz";
-		public final static String NEW_SENSORLUZ="dispositivo/nuevoSensorLuz";
-		public final static String FORM_SENSORPROXIMIDAD = "dispositivo/formSensorProximidad";
+	public final static String FORM_SENSORLUZ = "dispositivo/formSensorLuz";
+	public final static String NEW_SENSORLUZ="dispositivo/nuevoSensorLuz";
+	public final static String FORM_SENSORPROXIMIDAD = "dispositivo/formSensorProximidad";
 	
+	//Para el login
+	public final static String USER_LOGIN = "user/login";
+	public final static String USER_LOGOUT = "user/logout";
 }
