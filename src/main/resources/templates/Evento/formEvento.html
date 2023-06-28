@@ -31,9 +31,10 @@
 									th:field="*{dispositivo}">
 									<option value="">Seleccione un dispositivo</option>
 									<option th:each="sensoresLuz : ${sensoresLuz}"
-										th:value="${idDispositivo}" th:text="${sensoresLuz.nombre}"></option>
-										<option th:each="sensoresProximidad : ${sensoresProximidad}"
-										th:value="${idDispositivo}" th:text="${sensoresProximidad.nombre}"></option>
+										th:value="${sensoresLuz.idDispositivo}" th:text="${sensoresLuz.nombre}"></option>
+									<option th:each="sensoresProximidad : ${sensoresProximidad}"
+										th:value="${sensoresProximidad.idDispositivo}"
+										th:text="${sensoresProximidad.nombre}"></option>
 								</select>
 							</div>
 						</div>
