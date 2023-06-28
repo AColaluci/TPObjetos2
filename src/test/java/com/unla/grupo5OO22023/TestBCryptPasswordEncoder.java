@@ -2,7 +2,7 @@ package com.unla.grupo5OO22023;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-public class TestBCryptPasswordEncoder {
+public class TestBCryptPasswordEncoder{
 
 	public static void main(String[] args) {
 		BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
