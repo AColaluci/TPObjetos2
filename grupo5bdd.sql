@@ -1,5 +1,5 @@
-create database grupo5bdd;
-use grupo5bdd; 
+CREATE DATABASE grupo5bdd;
+USE grupo5bdd; 
 -- Script para agregar usuarios. 
 insert into user values(1,null, 1,'$2a$10$yJ1YaUX0efFZV6IKYlQibeSq6tquR2dmtyeOqXgnOb2sGsYAHJrdq',NULL,'ADMIN');
 insert into user_role values(1,null, 'ADMIN',null,1);

@@ -51,9 +51,13 @@ public class EventoController {
 	
 	@GetMapping("/editar/{idEvento}")
 	public String editar(@PathVariable int idEvento, Model model) {
+		List<SensorLuz> sensoresLuz = sensorluzService.getAll();
+		List<SensorProximidad> sensoresProximidad = sensorProximidadService.getAll();
 		Evento evento = eventoService.findById(idEvento);
 		if (evento != null){
 			model.addAttribute("evento",evento);
+			model.addAttribute("sensoresLuz",sensoresLuz);
+			model.addAttribute("sensoresProximidad",sensoresProximidad);
 			return ViewRouteHelper.EventoForm;
 		}
 		return ViewRouteHelper.ERROR_EDITAR;
