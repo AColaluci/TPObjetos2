@@ -3,6 +3,7 @@ package com.unla.grupo5OO22023.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.unla.grupo5OO22023.helpers.ViewRouteHelper;
