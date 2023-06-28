@@ -1,5 +1,8 @@
 create database grupo5bdd;
 use grupo5bdd; 
+-- Script para agregar usuarios. 
+insert into user values(1,null, 1,'$2a$10$yJ1YaUX0efFZV6IKYlQibeSq6tquR2dmtyeOqXgnOb2sGsYAHJrdq',NULL,'ADMIN');
+insert into user_role values(1,null, 'ADMIN',null,1);
 
 INSERT INTO dispositivo VALUES(1,1,"pruebadispos");
 INSERT INTO dispositivo VALUES(2,0,"ejemplodispos1");
@@ -24,7 +27,7 @@ INSERT INTO sensor_proximidad VALUES ('2023-03-10 18:20:00', '2023-03-11 07:10:0
 INSERT INTO sensor_proximidad VALUES ('2023-04-05 09:10:00', '2023-04-05 13:45:00', 1, 9);
 INSERT INTO sensor_proximidad  VALUES ('2023-05-20 16:30:00', '2023-05-21 10:20:00', 0, 10);
 
--- COMANDOS YOU KNOW PERSONALIZADOS YIA
+-- COMANDOS PARA TESTEAR, BUSCAR Y ELIMINAR CUALQUIER COSA SIN DRAMA.
 SELECT * FROM sensor_luz sl INNER JOIN dispositivo d WHERE d.id_dispositivo=sl.id_dispositivo;
 ALTER TABLE sensor_luz AUTO_INCREMENT = 1;
 ALTER TABLE dispositivo AUTO_INCREMENT = 1;
@@ -33,6 +36,9 @@ DELETE FROM sensor_luz;
 DELETE FROM dispositivo;
 DELETE FROM sensor_proximidad;
 SET SQL_SAFE_UPDATES = 0;
-
+DELETE FROM user_role;
+DELETE FROM user;
+select * from user;
+select * from user_role;
 
 
