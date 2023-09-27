@@ -41,7 +41,6 @@ public abstract class Dispositivo{
 	@Column(name = "estado")
 	protected boolean estado; 
 
-	//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOS
 	public abstract void actualizarEstado();
 
 	public int getIdDispositivo() {
@@ -67,7 +66,4 @@ public abstract class Dispositivo{
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-	
-	
-	
 }
